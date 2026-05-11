@@ -80,14 +80,14 @@
     <!-- 任務：將以下 div 結構重構為語意化標籤 -->
 
     <!-- 網站標題區域 -->
-    <header class="header">
+    <header class="header" role="banner">
       <div>
         <h1>技術部落格</h1>
         <p>分享前端開發的知識與經驗</p>
       </div>
 
       <!-- 導航選單 -->
-      <nav class="nav">
+      <nav class="nav" aria-label="主要導覽">
         <ul>
           <li><a href="#home">首頁</a></li>
           <li><a href="#articles">文章</a></li>
@@ -99,15 +99,19 @@
     </header>
 
     <!-- 主要內容區域 -->
-    <main class="content">
+    <main class="content" id="main-content">
       <!-- 文章內容 -->
-      <section class="main-content">
+      <section class="main-content" aria-labelledby="articles-title">
+        <h2 id="articles-title">最新文章</h2>
+
         <!-- 第一篇文章 -->
         <article class="article">
           <header>
             <h2>HTML5 語意化標籤完全指南</h2>
             <p>
-              <time datetime="2025-07-29">發布時間：2025年7月29日 | 作者：前端開發者</time>
+              發布時間：
+              <time datetime="2025-07-29">2025年7月29日</time>
+              | 作者：前端開發者
             </p>
           </header>
 
@@ -127,55 +131,57 @@
             </p>
           </section>
 
-          <div>
+          <footer>
             <p>
               標籤：
               <a href="#html5">#HTML5</a>
               <a href="#semantic">#語意化</a>
               <a href="#frontend">#前端開發</a>
             </p>
-          </div>
+          </footer>
         </article>
 
         <!-- 第二篇文章 -->
         <article class="article">
-          <div>
+          <header>
             <h2>CSS Grid 布局實戰技巧</h2>
-            <div>
-              <p>發布時間：2025年7月28日 | 作者：UI設計師</p>
-            </div>
-          </div>
+            <p>
+              發布時間：
+              <time datetime="2025-07-28">2025年7月28日</time>
+              | 作者：UI設計師
+            </p>
+          </header>
 
-          <div>
+          <section>
             <h3>Grid 布局的優勢</h3>
             <p>
               CSS Grid 提供了強大的二維布局能力， 讓複雜的版面設計變得簡單直觀。
             </p>
-          </div>
+          </section>
 
-          <div>
+          <section>
             <h3>基本使用方法</h3>
             <p>
               通過 display: grid 啟用網格布局， 然後使用 grid-template-columns
               和 grid-template-rows 定義網格結構。
             </p>
-          </div>
+          </section>
 
-          <div>
+          <footer>
             <p>
               標籤：
               <a href="#css">#CSS</a>
               <a href="#grid">#Grid布局</a>
               <a href="#design">#網頁設計</a>
             </p>
-          </div>
+          </footer>
         </article>
       </section>
 
       <!-- 側邊欄 -->
-      <aside class="sidebar">
+      <aside class="sidebar" aria-label="側邊欄資訊">
         <section>
-          <h3>熱門文章</h3>
+          <h2>熱門文章</h2>
           <ul>
             <li><a href="#">React Hooks 深度解析</a></li>
             <li><a href="#">JavaScript ES2025 新特性</a></li>
@@ -185,7 +191,7 @@
         </section>
 
         <section>
-          <h3>文章分類</h3>
+          <h2>文章分類</h2>
           <ul>
             <li><a href="#html">HTML (15)</a></li>
             <li><a href="#css">CSS (23)</a></li>
@@ -196,7 +202,7 @@
         </section>
 
         <section>
-          <h3>關於作者</h3>
+          <h2>關於作者</h2>
           <p>
             資深前端工程師，專精於現代網頁開發技術。
             熱愛分享技術知識，致力於推廣最佳實踐。
@@ -206,34 +212,12 @@
     </main>
 
     <!-- 頁面底部 -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <p>&copy; 2025 技術部落格。版權所有。</p>
       <p>
         <a href="#privacy" style="color: #adb5bd">隱私政策</a> |
         <a href="#terms" style="color: #adb5bd">使用條款</a>
       </p>
     </footer>
-
-    <!-- 重構指引：
-    
-    請將上述的 div 結構替換為適當的語意化標籤：
-    
-    1. 網站標題區域 → <header>
-    2. 導航選單 → <nav>
-    3. 主要內容區域 → <main>
-    4. 文章內容 → <article>
-    5. 文章區塊 → <section>
-    6. 側邊欄 → <aside>
-    7. 頁面底部 → <footer>
-    8. 文章標題區域 → <header> (在 article 內)
-    9. 文章底部資訊 → <footer> (在 article 內)
-    10. 時間資訊 → <time datetime="">
-    
-    完成重構後，請確保：
-    - 所有 div 都被適當的語意化標籤取代
-    - 保持原有的 CSS 類別以維持樣式
-    - 添加適當的 ARIA 屬性提升可訪問性
-    - 確保標題層級結構正確
-    -->
   </body>
 </html>
