@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>猜數字遊戲</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 40px;
+      }
+
+      input {
+        font-size: 20px;
+        padding: 5px;
+      }
+
+      button {
+        font-size: 20px;
+        padding: 5px 12px;
+      }
+
+      .result-area {
+        margin-top: 20px;
+        font-size: 24px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>猜數字遊戲</h1>
+
+    <p class="hint">請輸入 1-100 之間整數</p>
+
+    <input type="text" id="num-input" />
+    <button class="btn">看結果</button>
+
+    <div class="result-area"></div>
+
+    <script>
+      const myInput = document.querySelector("#num-input");
+      const myBtn = document.querySelector(".btn");
+      const hint = document.querySelector(".hint");
+      const resultArea = document.querySelector(".result-area");
+
+      const answer = Math.floor(Math.random() * 100) + 1;
+
+      let min = 1;
+      let max = 100;
+
+      console.log("答案是：", answer);
+
+      myBtn.addEventListener("click", function () {
+        const guessNumber = parseInt(myInput.value);
+
+        if (guessNumber < min || guessNumber > max) {
+          resultArea.textContent = `請輸入 ${min}-${max} 之間整數`;
+        } else if (guessNumber < answer) {
+          min = guessNumber;
+          resultArea.textContent = `請輸入 ${min}-${max} 之間整數`;
+        } else if (guessNumber > answer) {
+          max = guessNumber;
+          resultArea.textContent = `請輸入 ${min}-${max} 之間整數`;
+        } else {
+          resultArea.textContent = `猜中了，答案是：${answer}`;
+        }
+
+        hint.textContent = `目前範圍：${min}-${max}`;
+        myInput.value = "";
+      });
+    </script>
+  </body>
+</html>
