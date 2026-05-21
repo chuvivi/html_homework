@@ -1,0 +1,142 @@
+/* features */
+.features{
+  padding: 64px 0 96px 0;
+  text-align: center;
+}
+
+.features-title{
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 48px;
+}
+
+.feature-list{
+  margin: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.feature-card{
+  width: 100%;
+    max-width: 176px;
+    margin: 0 auto;
+}
+
+.feature-img-box{
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 176px;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.feature-image{
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-description{
+  font-size: 16px;
+  color: #4b5563;
+}
+
+/* quote */
+.quote{
+  background-color: #e5e7eb;
+  padding: 96px 0;
+}
+
+.quote-box{
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.quote-text{
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: #1f2937;
+  line-height: 1.25;
+}
+
+.quote-author{
+  font-size: 20px;
+  font-weight: 800;
+  text-align: right;
+}
+
+/* signup */
+.signup{
+  padding: 80px 0;
+}
+
+.signup-box{
+  padding: 32px 24px;
+  background-color: #3882f6;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.signup-title{
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.signup-description{
+  color: #e5e7eb;
+  font-size: 16px;
+}
+
+.signup-button{
+  padding: 12px 32px;
+  background-color: #3882f6;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media screen and (min-width:640px){
+  /* features */
+  .feature-list{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width:768px){
+  /* features */
+  .quote-text{
+    font-size: 36px;
+  }
+  /* signup */
+  .signup-box{
+    padding: 40px 48px;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width:1024px){
+  /* features */
+  .feature-list{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* signup */
+  .signup-box{
+    padding: 48px 64px;
+  }
+  .signup{
+  padding: 96px 0;
+}
+}
