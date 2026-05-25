@@ -7,9 +7,26 @@
   </head>
   <body>
     <script>
-      console.log("十二生肖排序(自訂排序):");
-      console.log("將:鼠,雞,猴,龍,馬依據十二生肖排序順序進行遞增排序:");
       const zoo = ["鼠", "雞", "猴", "龍", "馬"];
+
+      const zodiacOrder = {
+        鼠: 1,
+        牛: 2,
+        虎: 3,
+        兔: 4,
+        龍: 5,
+        蛇: 6,
+        馬: 7,
+        羊: 8,
+        猴: 9,
+        雞: 10,
+        狗: 11,
+        豬: 12,
+      };
+
+      zoo.sort((a, b) => zodiacOrder[a] - zodiacOrder[b]);
+
+      console.log(zoo);
     </script>
   </body>
 </html>
